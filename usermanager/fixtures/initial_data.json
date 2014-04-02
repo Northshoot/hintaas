@@ -1,0 +1,107 @@
+[{
+        "pk": 1,
+        "model": "auth.user",
+        "fields": {
+            "username": "marbel",
+            "first_name": "",
+            "last_name": "",
+            "is_active": true,
+            "is_superuser": true,
+            "is_staff": true,
+            "last_login": "2014-04-01T12:55:44.110Z",
+            "groups": [],
+            "user_permissions": [],
+            "password": "pbkdf2_sha256$10000$T3tW0yR1Yb5w$uLBo0u10XojeX+EW8NMTofeHNztzHvDzdpC//ShxjK8=",
+            "email": "x@x.com",
+            "date_joined": "2014-04-01T12:46:55.044Z"
+        }
+}, {
+        "pk": 2,
+        "model": "auth.user",
+        "fields": {
+            "username": "Perferend",
+            "first_name": "Consectetur ha",
+            "last_name": "Nihil sed sit delenit",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2014-04-01T13:01:35.179Z",
+            "groups": [],
+            "user_permissions": [17, 4, 5, 12, 51],
+            "password": "Illum reiciendis labore ea laborum debitis u",
+            "email": "dwxrpnxmcltbmn@dm.cci",
+            "date_joined": "2014-04-01T13:01:35.179Z"
+        }
+}, {
+        "pk": 3,
+        "model": "auth.user",
+        "fields": {
+            "username": "Incidunt amet saepe quo asper",
+            "first_name": "Sin",
+            "last_name": "Cum numquam qui dolori",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2014-04-01T13:01:35.191Z",
+            "groups": [],
+            "user_permissions": [12, 27, 41, 57],
+            "password": "Tempora iusto",
+            "email": "ot@etobrqcizzcfptmwh.bbm",
+            "date_joined": "2014-04-01T13:01:35.191Z"
+        }
+}, {
+        "pk": 4,
+        "model": "auth.user",
+        "fields": {
+            "username": "Asper",
+            "first_name": "Assum",
+            "last_name": "Aliquam qui reprehe",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2014-04-01T13:01:35.197Z",
+            "groups": [],
+            "user_permissions": [3],
+            "password": "Ducimus reiciendis praesentium ratione nisi itaque animi archite",
+            "email": "bcemqgpgwzcvu@mkssbgb.abq",
+            "date_joined": "2014-04-01T13:01:35.197Z"
+        }
+},
+    {
+        "pk": 1,
+        "model": "usermanager.profile",
+        "fields": {
+            "company": "Ut itaque in. Exce",
+            "updated_local": "2014-04-01T13:05:41.829Z",
+            "user": 4,
+            "created": "2014-04-01T13:05:41.829Z"
+        }
+    }, {
+        "pk": 2,
+        "model": "usermanager.profile",
+        "fields": {
+            "company": "Exercitationem sunt",
+            "updated_local": "2014-04-01T13:05:41.847Z",
+            "user": 3,
+            "created": "2014-04-01T13:05:41.847Z"
+        }
+    }, {
+        "pk": 3,
+        "model": "usermanager.profile",
+        "fields": {
+            "company": "Omnis commodi repudiandae",
+            "updated_local": "2014-04-01T13:05:41.850Z",
+            "user": 1,
+            "created": "2014-04-01T13:05:41.850Z"
+        }
+    }, {
+        "pk": 4,
+        "model": "usermanager.profile",
+        "fields": {
+            "company": "Quisquam cumq",
+            "updated_local": "2014-04-01T13:05:41.857Z",
+            "user": 2,
+            "created": "2014-04-01T13:05:41.857Z"
+        }
+    }
+]

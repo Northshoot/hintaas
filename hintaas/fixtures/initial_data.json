@@ -1,0 +1,121 @@
+[ {
+    "pk": 1,
+    "model": "hintaas.serviceprovider",
+    "fields": {
+        "description": "average temperature",
+        "user": 1,
+        "name": "Temperature house 1"
+    }
+}, {
+    "pk": 2,
+    "model": "hintaas.serviceconsumer",
+    "fields": {
+        "description": "average city temperature",
+        "user": 2,
+        "name": "CityAverage"
+    }
+}, {
+    "pk": 3,
+    "model": "hintaas.serviceprovider",
+    "fields": {
+        "description": "average temperature",
+        "user": 1,
+        "name": "Temperature house 2"
+    }
+}, {
+    "pk": 4,
+    "model": "hintaas.serviceprovider",
+    "fields": {
+        "description": "average temperature",
+        "user": 1,
+        "name": "Temperature house 3"
+    }
+}, {
+    "pk": 5,
+    "model": "hintaas.serviceprovider",
+    "fields": {
+        "description": "average humidity",
+        "user": 4,
+        "name": "humidity location 1"
+    }
+}, {
+    "pk": 6,
+    "model": "hintaas.serviceprovider",
+    "fields": {
+        "description": "average humidity",
+        "user": 4,
+        "name": "humidity location 2"
+    }
+}, {
+    "pk": 7,
+    "model": "hintaas.serviceconsumer",
+    "fields": {
+        "description": "average humidity of the city",
+        "user": 2,
+        "name": "CityhumidityAvera"
+    }
+},{
+    "pk": 1,
+    "model": "hintaas.interoperability",
+    "fields": {
+        "compatible": true,
+        "consumer": 2,
+        "provider": 1
+    }
+}, {
+    "pk": 2,
+    "model": "hintaas.interoperability",
+    "fields": {
+        "compatible": false,
+        "consumer": 7,
+        "provider": 1
+    }
+}, {
+    "pk": 3,
+    "model": "hintaas.interoperability",
+    "fields": {
+        "compatible": true,
+        "consumer": 2,
+        "provider": 3
+    }
+}, {
+    "pk": 4,
+    "model": "hintaas.interoperability",
+    "fields": {
+        "compatible": false,
+        "consumer": 2,
+        "provider": 4
+    }
+}, {
+    "pk": 5,
+    "model": "hintaas.interoperability",
+    "fields": {
+        "compatible": true,
+        "consumer": 7,
+        "provider": 5
+    }
+}, {
+    "pk": 6,
+    "model": "hintaas.interoperability",
+    "fields": {
+        "compatible": false,
+        "consumer": 2,
+        "provider": 5
+    }
+}, {
+    "pk": 7,
+    "model": "hintaas.interoperability",
+    "fields": {
+        "compatible": false,
+        "consumer": 2,
+        "provider": 6
+    }
+}, {
+    "pk": 8,
+    "model": "hintaas.interoperability",
+    "fields": {
+        "compatible": true,
+        "consumer": 7,
+        "provider": 6
+    }
+}]

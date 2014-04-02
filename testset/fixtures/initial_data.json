@@ -1,0 +1,122 @@
+[{
+        "pk": 1,
+        "model": "testset.testtemplate",
+        "fields": {
+            "description": "Dicta exercitationem ipsum consectetur esse facilis a, tenetur accusamus amet facilis delectus, animi voluptates ipsam fugit sapiente, minima earum qui maiores ut quia veritatis ratione consectetur totam sequi, dicta aut nihil quibusdam voluptas voluptates ipsa aperiam.",
+            "price": 84477,
+            "back_end_url": "Magni assumenda voluptas hic alias minima error volupt",
+            "configuration_xml": "Eveniet consequuntur p",
+            "created_date": "2014-04-01T12:24:42.863Z",
+            "image": "Fuga impedit sol",
+            "name": "Cupiditate"
+        }
+    }, {
+        "pk": 2,
+        "model": "testset.testtemplate",
+        "fields": {
+            "description": "Modi ullam nostrum, exercitationem obcaecati ratione natus dolorum suscipit",
+            "price": -71881,
+            "back_end_url": "Tempore magnam explicabo dolo",
+            "configuration_xml": "Sunt beatae laboriosam tempor",
+            "created_date": "2014-04-01T12:24:42.865Z",
+            "image": "Debitis",
+            "name": "Architecto commod"
+        }
+    }, {
+        "pk": 3,
+        "model": "testset.testtemplate",
+        "fields": {
+            "description": "Doloremque ipsa error eos qui nam? Hic blanditiis recusandae a ips",
+            "price": -49285,
+            "back_end_url": "Recusandae minima sunt deleniti incidunt",
+            "configuration_xml": "Autem at accusamus excepturi",
+            "created_date": "2014-04-01T12:24:42.866Z",
+            "image": "Asperiores in minima dicta blanditiis beatae.",
+            "name": "Autem quam at molliti"
+        }
+    }, {
+        "pk": 4,
+        "model": "testset.testtemplate",
+        "fields": {
+            "description": "Neque eum autem dignissimos atque vitae veritatis libero laudantium fugit incidunt est, dolor voluptatem ea quas porro explicabo placeat neque, iste qui quae debitis, cupiditate per",
+            "price": -49378,
+            "back_end_url": "Quasi sit ipsa consequun",
+            "configuration_xml": "Cumque corporis quibusdam mollitia blanditiis modi",
+            "created_date": "2014-04-01T12:24:42.868Z",
+            "image": "Aliquid labore eveniet volup",
+            "name": "Quis voluptas dicta ab doloremque fuga i"
+        }
+    }, {
+        "pk": 5,
+        "model": "testset.testtemplate",
+        "fields": {
+            "description": "Tempora eveniet alias voluptate quod est reiciendis",
+            "price": -85291,
+            "back_end_url": "Sed id aspe",
+            "configuration_xml": "Quos quo animi quibusdam ipsa labore mol",
+            "created_date": "2014-04-01T12:24:42.869Z",
+            "image": "Fugiat atque provident quisquam?",
+            "name": "Consectetur sed quo"
+        }
+    }, {
+        "pk": 6,
+        "model": "testset.testtemplate",
+        "fields": {
+            "description": "Repudiandae voluptatem fuga sunt nulla deleniti provident, tenetur nobis nisi cupiditate illo vitae quod quae consectetur aut eos sint, doloremque modi id aliquid officia ipsa nesciunt, porro soluta minus, laborum conseq",
+            "price": -70124,
+            "back_end_url": "Tempore reiciendis ad nesciunt et nobis error totam quae rerum tene",
+            "configuration_xml": "Temporibus ducimus eligendi illo dolorum quos,",
+            "created_date": "2014-04-01T12:24:42.871Z",
+            "image": "Sequi ve",
+            "name": "Quibu"
+        }
+    }, {
+        "pk": 7,
+        "model": "testset.testtemplate",
+        "fields": {
+            "description": "Dolor aliquam cumque ducimus hic est? Cum quod autem illum nobis cumque praesentium vitae, est reiciendis dicta laboriosam, illo facere necessitatibus magni. Facere fuga ad magni rem praesentium unde sed mai",
+            "price": 9659,
+            "back_end_url": "Quos repellat velit perferendis rerum c",
+            "configuration_xml": "Sapiente molestias itaque maiores delenit",
+            "created_date": "2014-04-01T12:24:42.872Z",
+            "image": "Iure vero volup",
+            "name": "Dicta ab blanditiis perspi"
+        }
+    }, {
+        "pk": 8,
+        "model": "testset.testtemplate",
+        "fields": {
+            "description": "Impedit nam consequatur ab totam aliquam ut quod doloremque beatae non minus, quis magni unde totam debitis necessitati",
+            "price": -47070,
+            "back_end_url": "Quis quod porro recusandae sapiente dignissimos modi co",
+            "configuration_xml": "Quis veniam quibusdam ipsum quod obcaec",
+            "created_date": "2014-04-01T12:24:42.874Z",
+            "image": "Tenetur debi",
+            "name": "Deleniti volu"
+        }
+    }, {
+        "pk": 9,
+        "model": "testset.testtemplate",
+        "fields": {
+            "description": "Alias distinctio temporibus unde dolores consequuntur d",
+            "price": 81291,
+            "back_end_url": "Blanditiis",
+            "configuration_xml": "Perspiciatis tenetur consectetur quaera",
+            "created_date": "2014-04-01T12:24:42.875Z",
+            "image": "Recusandae nemo iusto labor",
+            "name": "Veritatis dolor po"
+        }
+    }, {
+        "pk": 10,
+        "model": "testset.testtemplate",
+        "fields": {
+            "description": "Consectetur vel rerum totam enim tenetur. Quia harum sint pariatur fuga iusto officiis soluta iure saepe, nulla distinctio sit vero at quam alias fugit porro maxime, corporis perferendis atque officia culpa veniam quidem in quasi ratio",
+            "price": -95781,
+            "back_end_url": "Ipsa rei",
+            "configuration_xml": "Magni inventore numquam nihil",
+            "created_date": "2014-04-01T12:24:42.877Z",
+            "image": "Velit",
+            "name": "Reprehenderit similiq"
+        }
+    }
+]

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block scripts %}
+
+<script>
+    var count = 1;
+(function worker() {
+  $.ajax({
+    url: '/runner/status/',
+    data:{counter:count},
+    success: function(data) {
+        data = JSON.parse(data);
+      $('#status').html("<b>RQ#: " + data["counter"] + "</b> Run Status: " + data["status"] + " server time " + data["time"]);
+    },
+    complete: function() {
+      // Schedule the next request when the current one's complete
+        count+=1;
+      setTimeout(worker, 1000);
+    }
+  });
+})();
+</script>
+{% endblock %}
+{% block css %}
+
+{% endblock %}
+{% block content %}
+<br>
+<b>{{test}}</b>
+<br>
+<div id="status"></div>
+{% endblock %}

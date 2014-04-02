@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block scripts %}
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.tablesorter.js"></script> 
+    <!-- tablesorter widget file - loaded after the plugin -->
+<script src="{{ STATIC_URL }}js/jquery.tablesorter.widgets.js"></script>
+
+<script>
+$(function() {
+  // call the tablesorter plugin
+  $("#template_list").tablesorter({
+    theme: 'blue',
+    // use save sort widget
+    widgets: ["saveSort", "zebra", "resizable"],
+          widgetOptions: {
+      resizable : true
+    }
+
+  });
+
+  $('button').click(function(){
+    $('#template_list')
+      .trigger('saveSortReset') // clear saved sort
+      .trigger("sortReset");    // reset current table sort
+    return false;
+  });
+
+});
+</script>
+{% endblock %}
+{% block css %}
+<link rel='stylesheet' type='text/css' href='{{ STATIC_URL }}css/tablesorter/theme.blue.css'>
+{% endblock %}
+{% block content %}
+<button type="button">Reset Sort</button>
+<br>
+<table id="template_list" class="tablesorter" style="width:auto"> 
+<thead> 
+<tr> 
+    <th>Name</th> 
+    <th>Image</th> 
+    <th>Description</th> 
+    <th>Configuration (XML)</th> 
+    <th>Created</th> 
+    <th>Price</th>
+    <th>Run</th>
+</tr> 
+</thead> 
+<tbody> 
+  
+    {%for template in template_list%}
+<tr> 
+    <td>{{ template.name }}</td> 
+    <td>{{ template.image }}</td>  
+    <td>{{ template.description }}</td> 
+    <td>{{ template.configuration }}</td> 
+    <td>{{ template.created_date }}</td> 
+    <td>&#8364; {{ template.price }}</td> 
+    <td> <a href="/template/run/{{ template.id }}/"> run test with id: {{ template.id }} </a></td>
+</tr> 
+{%endfor%}
+</tbody> 
+</table> 
+{% if template_list %}
+{% endif %}
+{% endblock %}

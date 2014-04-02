@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block scripts %}
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.tablesorter.js"></script> 
+    <!-- tablesorter widget file - loaded after the plugin -->
+<script src="{{ STATIC_URL }}js/jquery.tablesorter.widgets.js"></script>
+
+<script>
+$(function() {
+  // call the tablesorter plugin
+  $("#template_list").tablesorter({
+    theme: 'blue',
+    // use save sort widget
+    widgets: ["saveSort", "zebra", "resizable","filter"],
+          widgetOptions: {
+      resizable : true,
+    filter_defaultAttrib : 'data-value'
+    }
+
+  });
+    
+  $('button').click(function(){
+    $('#template_list')
+      .trigger('saveSortReset') // clear saved sort
+      .trigger("sortReset");    // reset current table sort
+    return false;
+  });
+
+});
+</script>
+{% endblock %}
+{% block css %}
+<link rel='stylesheet' type='text/css' href='{{ STATIC_URL }}css/tablesorter/theme.blue.css'>
+<style>
+td.hideme {
+   display: hidden;
+}
+</style>
+{% endblock %}
+{% block content %}
+
+<table id="template_list" class="tablesorter" style="width:auto"> 
+<thead> 
+<tr> 
+    <th>Provider</th> 
+    <th>Interoperability</th> 
+    <th>Consumer</th> 
+
+</tr> 
+
+</thead>
+  <tbody>
+     
+    {%for o in inter_list%}
+       <tr>
+    <td>{{ o.provider }}</td> 
+           <td align="center" >  <div style="display: none">{{ o.compatible }}</div>
+               <img width="20px" src="{{ STATIC_URL }}images/button_{% if o.compatible %}ok{% else %}cancel{% endif %}.png"/></td> 
+    <td>{{ o.consumer }}</td>  
+    
+ </tr>
+{%endfor%}
+         
+</tbody> 
+</table> 
+{% if template_list %}
+{% endif %}
+{% endblock %}
