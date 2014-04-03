@@ -2,3 +2,4 @@ hintaas/settings.py
 *.db
 *.pyc
 auth_fix/fixtures/initial_data.json
+*.log
