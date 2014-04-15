@@ -1,0 +1,8 @@
+[ {
+    "pk": "q481jrxvipkb6w3wpd3jdg3gwb086la1",
+    "model": "sessions.session",
+    "fields": {
+        "expire_date": "2016-04-15T13:11:37.278Z",
+        "session_data": "MzMxNWM0OGQ1ZWNhYzRkMDRiZjdmZGMzNGVmYWQzZDlmMTIwNjEyNTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9pZCI6MX0="
+    }
+}]

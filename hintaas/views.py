@@ -3,9 +3,13 @@ Created on Mar 31, 2014
 
 @author: lauril
 '''
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, render
 from django.template import RequestContext
+from django.http import HttpResponse
 from testset.models import TestTemplate
+from django.shortcuts import redirect
+from django.contrib.auth.decorators import login_required
+from hintaas.models import  ServiceProvider, ServiceConsumer, Service
 
 xml="""<CATALOG>
     <PLANT>
@@ -297,9 +301,17 @@ xml="""<CATALOG>
         <AVAILABILITY>022299</AVAILABILITY>
     </PLANT>
 </CATALOG>"""
-def home(request):
-    return render_to_response('content.html',dict(test="heelloooo"),RequestContext(request))
 
+
+
+def home(request):
+    if not request.user.is_authenticated():
+        return redirect('accounts/login/?next=%s' % request.path)
+    else:
+        return render_to_response('content.html',dict(test="heelloooo",user=request.user),
+                              context_instance=RequestContext(request))
+
+@login_required
 def template(request, action):
     if action == 'list':
         tmpl = TestTemplate.objects.all()
@@ -313,13 +325,71 @@ def template(request, action):
         return render_to_response('content.html',dict(test="EDIT template"),RequestContext(request))
     else:
         return render_to_response('content.html',dict(test="Not Implemented"),RequestContext(request))
-  
-   
+
+@login_required  
+def services(request, action):
+    services = []
+    service_type=action
+    if action == request.user.username:
+        try:
+            services += ServiceProvider.objects.filter(user=request.user.get_profile().pk)
+            print len(services)
+        except Exception:
+            pass
+        try:
+            services +=ServiceConsumer.objects.filter(user=request.user.get_profile().pk)
+            print len(services)
+        except Exception:
+            pass
+    elif action == 'all':
+        services = getAllServices()
+    return render_to_response('services.html',dict(service_type=service_type,service=services),
+                              RequestContext(request))  
+@login_required
 def inter(request, action):
-    from models import Interoperability
+    from hintaas.models import Interoperability
     obj = Interoperability.objects.all()
-    print obj
     return render_to_response('interoperability_list.html',dict(
                                                             inter_list=obj,
                                                             data="oki!"),
                                    RequestContext(request))
+
+@login_required
+def serviceAdd(request):
+    from forms import ServiceCreateForm, ServiceProviderForm, ServiceConsumerForm
+    if(request.method == 'POST'):
+        data = request.POST.copy()
+        data['user']=request.user.get_profile().pk #service is assigned to profile!
+        if request.POST.get('provider'):
+            form = ServiceProviderForm(data)
+        else:
+            form = ServiceConsumerForm(data)
+        if form.is_valid():
+            sub = form.save(commit=False)       
+            sub.save()
+            if request.POST.has_key('submit_add'):
+                return redirect('/service/add/')
+            else:
+                return HttpResponse('<script type="text/javascript">window.close()</script>')
+        else:
+            return render(request, 'hintaas/form.html', {'ServiceCreate':form, 'request' : request})
+
+    else:
+        sub = Service()
+        subform = ServiceCreateForm(instance=sub)
+        return render(request, 'hintaas/form.html', {'ServiceCreate':subform, 'request' : request})
+    
+def getAllServices():
+    from models import ServiceProvider, ServiceConsumer
+    services = []
+    try:
+        services +=  ServiceProvider.objects.all() 
+        services +=  ServiceConsumer.objects.all() 
+    except Exception:
+        pass
+    
+    return services
+        
+          
+def analytics(request):
+    return render_to_response('analytics.html',dict(test="Analytics"),RequestContext(request))

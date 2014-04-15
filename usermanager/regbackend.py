@@ -19,7 +19,7 @@ class StudentBackend(RegistrationView):
         user.first_name = kwargs['first_name']
         user.last_name = kwargs['last_name']
         user.save()
-        profile = Profile.objects.create(user=user, course=kwargs['course'])
+        profile = Profile.objects.create(user=user, company=kwargs['company'])
         profile.save()
         
     def get_form_class(self, request):

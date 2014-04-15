@@ -3,9 +3,9 @@
 {{ form.non_field_errors }}
 {% endif %}
 </div>
-
-
-<form method="post" action="" class="accountForm marginTop">
+Log in
+<form method="post" action="" >
+    {% csrf_token %}
 	<table class="" cellspacing="10">
 	{% for field in form %}
 		<tr>

@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+    {% if user.is_authenticated %}
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>{% block title %}{% endblock %}</title>
+         <meta charset="utf-8" />
+
+ {% load staticfiles %}        
+
+<script src="{{ STATIC_URL }}js/jquery-1.10.2.js"></script>
+<script src="{{ STATIC_URL }}js/jquery-ui-1.10.4.custom.js"></script>
+<!-- note that there's also blue.uni-form.css and dark.uni-form.css available if you want to try changing defaults up -->
+<link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap.css" type="text/css"/>
+<link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap.css" type="text/css"/>
+<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css"/>
+<!-- uni-form JS library, optional -->
+<script src="{% static "bootstrap/js/bootstrap.js" %}" type="text/javascript"></script>    
+
+    <style>
+    #outer{
+    width:100%;
+
+    /* Firefox */
+    display:-moz-box;
+    -moz-box-pack:center;
+    -moz-box-align:center;
+
+    /* Safari and Chrome */
+    display:-webkit-box;
+    -webkit-box-pack:center;
+    -webkit-box-align:center;
+
+    /* W3C */
+    display:box;
+    box-pack:center;
+    box-align:center;
+}
+#content{
+    width:50%;
+}
+    </style>
+</head>
+
+<body>
+
+<div id="outer">    
+
+ <br />
+ <h3>You are adding service for {{ service_type }}
+        <br /> </h3>
+
+    {% block body %}
+
+{% if messages %}
+  <div class="msg"> 
+  {% if messages %}
+    <ul class="messages_">
+       <b>Information::</b>
+       {% for message in messages %}
+        <li{% if message.tags %} id="{{ message.tags }}"{% endif %}>
+        {{ message }}</li>
+       {% endfor %}
+      </ul>
+  {% endif %}
+
+{% endif %}
+
+      
+            <div class="content">
+        {% block content %}
+
+        {% endblock %}
+      </div>
+    {% endblock %}
+  </div>
+
+</body>
+{% endif %}
+{% if not user.is_authenticated %}
+ You have to be logged in to access this page
+{% endif %}
+</html>

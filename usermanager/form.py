@@ -5,11 +5,11 @@ Created on Jul 20, 2012
 '''
 from django import forms
 from django.contrib.auth.models import User
-from usermanager.models import Course, Profile
+from usermanager.models import  Profile
 from registration.forms import RegistrationForm
 from django.utils.translation import ugettext_lazy as _
-
-
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Submit
 
 attrs_dict = { 'class': 'required' }
 
@@ -25,22 +25,27 @@ def affiliation_valid_email(value):
 
    
 class UserRegistrationForm(RegistrationForm):  
-    
-    class Meta:
-        model = User
-        fields = ("first_name","last_name","username", "email", "password1", "password2")
+    def __init__(self, *args, **kwargs):
+        super(UserRegistrationForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_id = 'id-exampleForm'
+        self.helper.form_class = 'blueForms'
+        self.helper.form_method = 'post'
+        self.helper.form_action = 'submit_survey'
+        self.helper.form_tag = False
+        self.helper.add_input(Submit('submit', 'Submit'))
         
     username = forms.RegexField(regex=r'^\w',
                                 max_length=9,
                                 widget=forms.TextInput(attrs=attrs_dict),
-                                label=_("Username - same as in LTU!"),
-                                error_messages={ 'invalid': _("User name needs to match LTU convention.") })
+                                label=_("User name - same as email until @"),
+                                error_messages={ 'invalid': _("User name needs to match email.") })
     first_name = forms.CharField(max_length=30)
     last_name = forms.CharField(max_length=30)
-    course = forms.ModelChoiceField(queryset=Course.objects,required=True)
-    email = forms.EmailField(validators=[affiliation_valid_email],
+    company = forms.CharField(max_length=30)
+    email = forms.EmailField(
                              widget=forms.TextInput(attrs=dict(attrs_dict,
-                                                               maxlength=75)),label=_("LTU - Email address"))
+                                                               maxlength=75)),label=_("Email address"))
     
 
     
@@ -58,7 +63,7 @@ class UserRegistrationForm(RegistrationForm):
         user.first_name =  self.cleaned_data["first_name"]
         user.last_name =self.cleaned_data["last_name"]
         profile = Profile(systemuser=user,
-                                            course=self.cleaned_data["course"])
+                                            company=self.cleaned_data["company"])
 
         
         user.save()

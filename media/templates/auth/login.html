@@ -1,5 +1,4 @@
-{% extends "base1.html" %}
-{% block css %}
+{% extends "base1.html" %} {% block css %}
 <style>
     body {
         padding-top: 40px;
@@ -41,23 +40,23 @@
         border-top-right-radius: 0;
     }
 </style>
-{% endblock %}
-{% block content %}
-
-<h1></h1>
-
-{% load crispy_forms_tags %}
+{% endblock %} {% block content %}
 
 <div class="container">
-    <form action="/accounts/register/" method="post" class="form-signin" role="form">
-        <h2 class="form-signin-heading">Registration</h2>
-        {% csrf_token %}
-    {% crispy form %}
-        
-</form>
-        
-
+    <form action="/accounts/login/" method="post" class="form-signin" role="form">
+        <h2 class="form-signin-heading">{{ state }}</h2>
+        {% csrf_token %} {% if next %}
+        <input type="hidden" name="next" value="{{ next }}" />{% endif %}
+        <input type="text" name="username" value="{{username}}" class="form-control" placeholder="User name" required autofocus>
+        <input type="password" name="password" value="" class="form-control" placeholder="Password" required>
+        <label class="checkbox">
+            <input type="checkbox" name="remember-me" value="True">Remember me
+        </label>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <a href="/accounts/register/">Register</a>
+    </form>
     
 </div>
 <!-- /container -->
+
 {% endblock %}
