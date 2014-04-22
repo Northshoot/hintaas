@@ -10,12 +10,12 @@ import os,datetime, sys
 import threading
 GROUPNAME = 'MAESTRO'
 CLIENT_PORT = 9999
-
+LOCAL_PATH = os.path.dirname(os.path.dirname(__file__))
 import logging
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
                     datefmt='%m-%d %H:%M',
-                    filename='/Users/lauril/workspace/hintaas/ccmd.srv.log',
+                    filename=LOCAL_PATH +'/ccmd.srv.log',
                     filemode='w+')
 boto_log = logging.getLogger('boto')
 boto_log.setLevel(logging.WARNING)
